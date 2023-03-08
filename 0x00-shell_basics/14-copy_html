@@ -1,15 +1,2 @@
 #!/bin/bash
-for file in *.html; do
-    if [ -f "../$file" ]; then
-        # Check if the file in the parent directory is older than the current file
-        if [ "$file" -nt "../$file" ]; then
-            cp "$file" "../$file"
-            echo "Copied $file to parent directory"
-        else
-            echo "Skipping $file, parent directory has a newer version"
-        fi
-    else
-        cp "$file" "../$file"
-        echo "Copied $file to parent directory"
-    fi
-done
+cp -u ./*.html ../
