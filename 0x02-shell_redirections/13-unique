@@ -1,0 +1,2 @@
+#!/bin/bash
+find /etc -name "passwd" -exec cat {} \ | cut -d: -f1 | sort | uniq -u | tr '\n' ' ' | rev | cut -c 2- | rev
